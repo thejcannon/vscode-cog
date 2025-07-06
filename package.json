@@ -1,0 +1,31 @@
+{
+  "name": "cog",
+  "displayName": "vscode-cog",
+  "description": "Cog support",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.101.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "grammars": [
+      {
+        "path": "./syntaxes/cog-hash-comments.json",
+        "scopeName": "cog-hash-comments.injection",
+        "injectTo": [
+          "source.python",
+          "source.toml",
+          "source.yaml"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.python": "python"
+        },
+        "tokenTypes": {
+          "meta.embedded.python": "other"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "scopeName": "cog-hash-comments.injection",
+  "injectionSelector": "L:comment.line.number-sign",
+  "patterns": [
+    {
+      "name": "meta.embedded.python",
+      "begin": "(#\\s*)?\\[\\[\\[cog",
+      "end": "(#\\s*)?\\]\\]\\]",
+      "beginCaptures": {
+        "0": {"name": "comment.line.number-sign"}
+      },
+      "endCaptures": {
+        "0": {"name": "comment.line.number-sign"}
+      },
+      "patterns": [
+        {
+          "match": "^(\\s*#\\s*)(.*)$",
+          "captures": {
+            "1": {"name": "comment.line.number-sign"},
+            "2": {
+              "patterns": [
+                {"include": "source.python"}
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
